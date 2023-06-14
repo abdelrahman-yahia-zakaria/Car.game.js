@@ -1,0 +1,12 @@
+body {
+  overflow: hidden;
+  background: green;
+}
+canvas {
+  background: url("/images/background.png");
+  margin-left: 370;
+}
+h1 {
+  position: fixed;
+  top: 0;
+}
