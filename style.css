@@ -3,10 +3,21 @@ body {
   background: green;
 }
 canvas {
-  background: url("/images/background.png");
-  margin-left: 370;
+  background: url("./images/background.png");
+  margin-left: 25%;
 }
 h1 {
   position: fixed;
   top: 0;
+}
+#game {
+  background-color: rgb(213, 214, 216);
+  width: 20%;
+  border: solid 2px rgb(82, 80, 80);
+  height: 20%;
+  top: 85%;
+  text-align: center;
+  position: fixed;
+  box-shadow: 0px 0px 20px 3px black;
+  display: block;
 }
