@@ -1,3 +1,6 @@
+var right = false;
+var left = false;
+let input = { N : 150, F : 500 };
 window.onload = function () {
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
@@ -10,10 +13,7 @@ window.onload = function () {
   // ********SIZE.3******** \\
   var v = 150;
   var k = 0;
-  // ********SIZE.4******** \\
-  var N = 200;
-  var F = 500;
-  // var container = $("#container");
+  var p = 5;
 
   // ********PNG.1******** \\
   var images1 = new Image();
@@ -27,10 +27,13 @@ window.onload = function () {
   // ********PNG.4******** \\
   var images4 = new Image();
   images4.src = "./images/cars4.png";
+  // ********PNG.5******** \\
+  var images5 = new Image();
+  images5.src = "./images/background.png"
 
   function draw() {
-    // **********1********* \\
     context.clearRect(0, 0, 600, 760);
+    // **********1********** \\
     context.drawImage(images1, x, y, 60, 120);
     y += 20;
     if (y >= 700) {
@@ -52,27 +55,57 @@ window.onload = function () {
     }
     // **********4********* \\
     context.beginPath();
-    context.drawImage(images4, N, F, 60, 120);
-    if (left){
-      N -= 20;
-      if (N <= 120) {
-        N = 120;
-      }
+    context.drawImage(images4, input.N, input.F, 60, 120);
     }
-    if (right){
-      N += 20;
-      if (N >= 400) {
-        N = 400;
-      }
-    }
-  }
   setInterval(draw, 50);
 };
-function top1() {
-  left = true;
-  right = false;
-}
-function wealth() {
-  right = true;
-  left = false;
-}
+
+var p = 5;
+window.addEventListener("keydown", e => {
+    switch(e.key){
+        case "ArrowUp":
+            input.F -= p;
+            if (input.F <= -10) {
+              input.F = -10;
+            }
+            break
+        case "ArrowDown":
+            input.F += p;
+            if (input.F >= 510) {
+              input.F = 510;
+            }
+            break
+        case "ArrowLeft":
+            input.N -= p;
+             if (input.N <= 120) {
+                 input.N = 120;
+            }
+            break
+        case "ArrowRight":
+            input.N += p;
+             if (input.N >= 400) {
+                 input.N = 400;
+            }
+            break
+        case "w":
+              p + 100;
+              break
+        case "s":
+              input.F += 5;
+              if (input.F >= 510) {
+                input.F = 510;
+              }
+              break
+        case "a":
+              input.N -= 5;
+               if (input.N <= 120) {
+                   input.N = 120;
+              }
+              break
+        case "d":
+              input.N += 5;
+               if (input.N >= 400) {
+                   input.N = 400;
+              }
+    }
+});
