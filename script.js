@@ -1,6 +1,7 @@
 var right = false;
 var left = false;
 let input = { N : 150, F : 500 };
+let cars3 = { v : 150, k : 0 };
 window.onload = function () {
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
@@ -11,8 +12,6 @@ window.onload = function () {
   var a = 320;
   var p = 0;
   // ********SIZE.3******** \\
-  var v = 150;
-  var k = 0;
   var p = 5;
 
   // ********PNG.1******** \\
@@ -27,9 +26,6 @@ window.onload = function () {
   // ********PNG.4******** \\
   var images4 = new Image();
   images4.src = "./images/cars4.png";
-  // ********PNG.5******** \\
-  var images5 = new Image();
-  images5.src = "./images/background.png"
 
   function draw() {
     context.clearRect(0, 0, 600, 760);
@@ -48,10 +44,10 @@ window.onload = function () {
     }
     // **********3********* \\
     context.beginPath();
-    context.drawImage(images3, v, k, 60, 120);
-    k += 22;
-    if (k >= 700) {
-      k = -100;
+    context.drawImage(images3, cars3.v, cars3.k, 60, 120);
+    cars3.k += 22;
+    if (cars3.k >= 700) {
+      cars3.k = -100;
     }
     // **********4********* \\
     context.beginPath();
@@ -59,3 +55,10 @@ window.onload = function () {
     }
   setInterval(draw, 50);
 };
+var display = "none";
+function plus_game_ovar (){
+  p = document.getElementById("Game-ovar");
+  p.style.display = display;
+  window.requestAnimationFrame(plus_game_ovar);
+}
+window.requestAnimationFrame(plus_game_ovar);
