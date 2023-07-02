@@ -113,7 +113,6 @@ function change_the_car (){
 
 function start4 (){
   document.getElementById("canvas").style.display = "block"
-  document.getElementById("move").style.display = "block"
   document.getElementById("Home").style.display = "none"
   game = true;
   setInterval(plus,1000);
