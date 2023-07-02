@@ -1,22 +1,14 @@
-// // =============={ هذا هو المسؤول عن الخسارة }============== //
-// window.requestAnimationFrame(collision);
-// var ggg = true;
-// function collision (){
-// if (ggg){
-//  if (input.F < cars3.k){ 
-//     if (input.N == cars3.v){
-//         alert("go");
-//       score = 0;
-//       i = document.getElementById("div");
-//       i.innerHTML = "moaaz"
-//     }
-//  }
-// }
-// if (input.F > cars3.k){
-//    ggg = true;
-// }
-// if (input.F < cars3.k){
-//    ggg = false;
-// }
-//  window.requestAnimationFrame(collision);
-// }
+// =============={ هذا هو المسؤول عن الخسارة }============== //
+window.requestAnimationFrame(collision);
+var y_handler = true;
+function collision (){
+if (y_handler){
+ if (input.y == cars3.y){ 
+    if (input.x == cars3.x){
+      alert("go");
+      Coin = -1;
+    }
+ }
+}
+ window.requestAnimationFrame(collision);
+}

@@ -1,32 +1,51 @@
 var speed = 10;
-var Score = 0;
+var Coin = 0;
 // car_speed();
 plusscore();
 window.addEventListener("keydown", e => {
     switch(e.key){
         case "Shift" :
             case "ArrowUp" :
-            input.F -= speed;
-            if (input.F <= -10) {
-              input.F = -10;
+            if (game){
+            input.y -= speed;
+            if (input.y <= -10) {
+              input.y = -10;
             }
+          }
             break
         case "ArrowDown":
-            input.F += speed;
-            if (input.F >= 510) {
-              input.F = 510;
+            if (game){
+            input.y += speed;
+            if (input.y >= 600) {
+              input.y = 590;
             }
+          }
             break
         case "ArrowLeft":
-            input.N -= speed;
-             if (input.N <= 120) {
-                 input.N = 120;
+            if (game){
+                input.x -= speed;
+                if (input.x <= 120) {
+                    input.x = 120;
+               }
             }
+            if (dcc){
+             if (car > 1){
+                 car--;
+             }
+            }
+
             break
         case "ArrowRight":
-            input.N += speed;
-             if (input.N >= 400) {
-                 input.N = 400;
+            if (game){
+                input.x += speed;
+                if (input.x >= 400) {
+                    input.x = 400;
+               }
+            }
+            if (dcc){
+             if (car < 4){
+                    car++;
+             }
             }
             break
         case "w":
@@ -34,6 +53,9 @@ window.addEventListener("keydown", e => {
             //     speed += 1;
             //     document.getElementById("speed1").innerHTML = "Car.speed : " + speed;
             // }
+              break
+        case "Enter":
+              start4();
               break
         case "s":
             // if (speed > 5){
@@ -44,10 +66,10 @@ window.addEventListener("keydown", e => {
         case "S":
               document.getElementById("game-setting").style.display = "block"
               break
-        case "d":
-              input.N += 5;
-               if (input.N >= 400) {
-                   input.N = 400;
+        case "Leftmouse":
+              input.x += 5;
+               if (input.x >= 400) {
+                   input.x = 400;
               }
     }
 });
@@ -55,11 +77,10 @@ window.addEventListener("keydown", e => {
 //     document.getElementById("speed1").innerHTML = "Car.speed : " + speed;
 // } 
 function plusscore (){
-    document.getElementById("score").innerHTML = "Score: " + Score ;
-    window.requestAnimationFrame(plus);
+    document.getElementById("score").innerHTML = "Coin: " + Coin;
+    // setInterval(plus,1000);
 }
 function plus (){
-    Score++;
-    window.requestAnimationFrame(plus);
-    document.getElementById("score").innerHTML = "Score: " + Score;
+    Coin += 5;
+    document.getElementById("score").innerHTML = "Coin: " + Coin;
 }
