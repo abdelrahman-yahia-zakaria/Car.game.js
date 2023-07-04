@@ -2,6 +2,7 @@ var right = false;
 var left = false;
 var dcc = true;
 var game = false;
+let grid = 30;
 let input = { x : 150, y : 500 };
 let cars3 = { x : 150, y : 0 };
 var car = 1;
@@ -13,10 +14,10 @@ window.onload = function () {
   var context = canvas.getContext("2d");
   // ********SIZE.1******** \\
   var x = 400;
-  var y = 0;
+  var y = Math.floor(Math.random() * grid);
   // ********SIZE.2******** \\
   var a = 320;
-  var p = 0;
+  var p = Math.floor(Math.random() * grid);
   // ********SIZE.3******** \\
   var p = 5;
 
@@ -40,6 +41,8 @@ window.onload = function () {
   images4.src = i;
   // document.getElementById("move").src = i;
     context.clearRect(0, 0, 600, 760);
+    context.drawImage(images5, 0, 0, 600, 760);
+    context.beginPath();
     context.drawImage(images5, h, t, 600, 760);
     t += 20;
     if (t === 100){
@@ -49,7 +52,7 @@ window.onload = function () {
     context.beginPath();
     context.drawImage(images1, x, y, 60, 120);
     if (game){
-    y += 20;
+    y += Math.floor(Math.random() + grid - 10);
     if (y >= 700) {
       y = -100;
     }
@@ -58,7 +61,7 @@ window.onload = function () {
     context.beginPath();
     context.drawImage(images2, a, p, 60, 120);
     if (game){
-    p -= 22;
+    p -= Math.floor(Math.random() + grid - 10);
     if (p <= -100) {
       p = 700;
     }
@@ -67,14 +70,14 @@ window.onload = function () {
     context.beginPath();
     context.drawImage(images3, cars3.x, cars3.y, 60, 120);
     if (game){
-    cars3.y += 22;
+    cars3.y += Math.floor(Math.random() + grid - 10);
     if (cars3.y >= 700) {
       cars3.y = -100;
     }
   }
     // **********4********* \\
     context.beginPath();
-    context.drawImage(images4, input.x, input.y, 60, 120);
+    context.drawImage(images4, input.x, input.y, 60, 90);
     // context.fillText("me", input.x, input.y);
     // context.font = "30px Arial";
     document.getElementById("move").style.top = input.y - 50;
@@ -91,6 +94,7 @@ function plus_game_ovar (){
   p.style.display = display;
   window.requestAnimationFrame(plus_game_ovar);
 }
+// display = "block"
 window.requestAnimationFrame(plus_game_ovar);
 
 // This changes the car whenever the right or left arrow button is pressed //
@@ -114,7 +118,20 @@ function change_the_car (){
 function start4 (){
   document.getElementById("canvas").style.display = "block"
   document.getElementById("Home").style.display = "none"
+  // document.getElementById("move").style.display = "block"
   game = true;
   setInterval(plus,1000);
   dcc = false;
+  openFullscreen();
 }
+var elem = document.getElementById("u");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+// window.requestAnimationFrame(openFullscreen);

@@ -1,25 +1,19 @@
 body {
-  background: green;
+  /* background: green; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,0.8);
+  overflow: hidden;
 }
 canvas {
-  background: url("./images/background.png");
-  margin-left: 10%;
-  position: fixed;
   display: none;
+  background-color: green;
   /* visibility: hidden; */
-}
-h1 {
-  position: fixed;
-  top: 0;
-  /* visibility: hidden; */
-  display: none;
 }
 #score {
-  position: fixed;
+  position: absolute;
   background-color: #999999;
   width: 10%;
   height: 5%;
@@ -28,7 +22,8 @@ h1 {
   align-items: center;
   text-align: center;
   background-color: #91a400;
-  top: 6%;
+  top: 1.5%;
+  left: 1%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: larger;
 }
@@ -50,12 +45,12 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,0.8); */
 }
 #Home {
-  width: 80%;
-  height: 90%;
-  background-color: #909c32;
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8); 
+  width: 95%;
+  height: 95%;
+  background-color: #909c32; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +95,7 @@ h1 {
 #myProgress {
   width: 50%;
   margin-left: 25%;
-  background-color: #ddd;
+  background-color: #460d0d;
   text-align: center;
   /* display: none; */
 }
@@ -133,4 +128,14 @@ h1 {
   position: fixed;
   cursor: pointer;
   display: none;
+}
+#stop-game {
+  width: 50vw;
+  height: 50vh;
+  border: solid 2px black;
+  position: fixed;
+  background-color: #909c32;
+}
+#car {
+  /* box-shadow: inset 0px 0px 12px 9px rgba(0,0,0,0.8); */
 }

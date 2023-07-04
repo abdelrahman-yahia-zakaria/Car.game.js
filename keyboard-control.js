@@ -17,7 +17,7 @@ window.addEventListener("keydown", e => {
             if (game){
             input.y += speed;
             if (input.y >= 600) {
-              input.y = 590;
+              input.y = 600;
             }
           }
             break
@@ -48,11 +48,8 @@ window.addEventListener("keydown", e => {
              }
             }
             break
-        case "w":
-            // if (speed < 10){
-            //     speed += 1;
-            //     document.getElementById("speed1").innerHTML = "Car.speed : " + speed;
-            // }
+        case "5":
+
               break
         case "Enter":
               start4();

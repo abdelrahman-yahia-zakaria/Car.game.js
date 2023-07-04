@@ -8,18 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <h1 id="h1">Car.game</h1>
-    <canvas id="canvas" height="760" width="600"></canvas>
-    <!-- <canvas id="canvas" height="760" width="600"></canvas> -->
-    <img id="move" />
+  <body id="u">
+    <!-- <h1 id="h1">Car.game</h1> -->
+    <!-- <div id="stop-game"></div> -->
+    <canvas id="canvas" height="760" width="600">  
+  </canvas>
+
+    <img id="move" src="https://source.unsplash.com/random/200x200"/>
     <div id="game-setting"></div>
     <div id="Game-ovar"></div>
-    <div id="yscore"><div id="score"></div></div>
+   <div id="score"></div>
     <div id="Home">
       <div id="shop-cars">
         <div id="fdfd"></div>
-        <button id="b" onclick="previous_car()"> < </button><img id="car" src="./images/cars4.png"/><button id="plus" onclick="next_car()"> > </button>
+        <button id="b" onclick="car--"> < </button><img id="car" src="./images/cars4.png"/><button id="plus" onclick="car++"> > </button>
         <button style="position: fixed; top: 60%;" onclick="start4()">start game</button>
       </div>
     </div>
