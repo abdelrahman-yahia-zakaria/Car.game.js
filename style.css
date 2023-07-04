@@ -1,40 +1,69 @@
 body {
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,0.8);
   overflow: hidden;
-  background: green;
 }
 canvas {
-  background: url("./images/background.png");
-  margin-left: 25%;
-  position: fixed;
-}
-h1 {
-  position: fixed;
-  top: 0;
+  display: none;
+  background-color: green;
+  /* visibility: hidden; */
 }
 #score {
-  position: fixed;
+  position: absolute;
   background-color: #999999;
   width: 10%;
-  height: 10%;
+  height: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #91a400;
-  border-radius: 10%;
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8); 
-  top: 10%;
+  top: 1.5%;
+  left: 1%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: larger;
 }
+#b {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  /* position: fixed; */
+}
+#plus {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  /* position: fixed; */
+}
+#shop-cars {
+  width: 60%;
+  height: 70%;
+  background-color: rgb(95, 104, 104);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* box-shadow: inset 0px 0px 20px 20px rgba(0,0,0,0.8); */
+}
+#Home {
+  width: 95%;
+  height: 95%;
+  background-color: #909c32; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 10s;
+}
 #Game-ovar {
   position: fixed;
-  background-color: black;
+  background-color: rgb(0,0,0,0.4);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  transition: 10s;
 }
 #game-setting {
   position: fixed;
@@ -66,7 +95,7 @@ h1 {
 #myProgress {
   width: 50%;
   margin-left: 25%;
-  background-color: #ddd;
+  background-color: #460d0d;
   text-align: center;
   /* display: none; */
 }
@@ -91,4 +120,22 @@ h1 {
   justify-self: center;
   align-self: center;
   text-align: center;
+}
+#move {
+  background: rgb(0,0,0,0.1);
+  width: 60px;
+  height: 80px;
+  position: fixed;
+  cursor: pointer;
+  display: none;
+}
+#stop-game {
+  width: 50vw;
+  height: 50vh;
+  border: solid 2px black;
+  position: fixed;
+  background-color: #909c32;
+}
+#car {
+  /* box-shadow: inset 0px 0px 12px 9px rgba(0,0,0,0.8); */
 }
